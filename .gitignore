@@ -1,3 +1,5 @@
 __pycache__
 .env
 env
+xception_v4_16_0.894.h5
+clothing-model.tflite
