@@ -1,0 +1,10 @@
+version: "3"
+services:
+  clothing-model:
+    image: mlzoomcamp-10-model:xception-v4
+  gateway:
+    image: mlzoomcamp-10-gateway
+    environment:
+      - TF_SERVING_HOST=clothing-model:8500
+    ports:
+      - 9696:9696

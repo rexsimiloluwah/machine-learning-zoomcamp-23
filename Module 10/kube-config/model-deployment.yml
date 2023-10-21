@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tf-serving-clothing-model-deployment
+spec:
+  selector:
+    matchLabels:
+      app: tf-serving-clothing-model
+  template:
+    metadata:
+      labels:
+        app: tf-serving-clothing-model
+    spec:
+      containers:
+      - name: tf-serving-clothing-model
+        image: similoluwaokunowo/mlzoomcamp-10-model:latest
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "1.5"
+        ports:
+        - containerPort: 8500

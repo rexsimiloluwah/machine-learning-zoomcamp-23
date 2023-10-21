@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-k8s-example-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simple-k8s-example
+  template:
+    metadata:
+      labels:
+        app: simple-k8s-example
+    spec:
+      containers:
+      - name: simple-k8s-example
+        image: similoluwaokunowo/simple_k8s_example_mlzoomcamp:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "100m" # use 10% of the CPU
+        ports:
+        - containerPort: 9698
