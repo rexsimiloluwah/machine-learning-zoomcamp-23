@@ -178,8 +178,18 @@ kubectl apply -f kube-config/model-deployment.yml
 kubectl apply -f kube-config/model-service.yml
 ```
 
+- Test the model deployment using port forwarding to send requests to the pod
+
 - Create the resources (deployment, services) on the Kubernetes cluster for the gateway
 ```bash
 kubectl apply -f kube-config/gateway-deployment.yml
 kubectl apply -f kube-config/gateway-service.yml
 ```
+- Test the endpoint generated for the `gateway-service` for the LoadBalancer
+
+## 10.10 Explore More
+* Other local Kubernetes: `minikube`, `k3d`, `k3s`, `microk8s`, `EKS Anywhere`
+* [Rancher Desktop](https://rancherdesktop.io) - provides container managemenet and Kubernetes to the desktop
+* [Lens](https://k8slens.dev) - For monitoring Kubernetes instances
+* Try out other managed Kubernetes services from other cloud providers i.e. GCP, Azure, Digital Ocean etc.
+* Learn about Kubernetes namespaces. Namespaces are used for organizing projects in a Kubernetes cluster. In this project we used the `default` namespace.

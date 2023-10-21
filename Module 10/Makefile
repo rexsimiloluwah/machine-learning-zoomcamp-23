@@ -34,3 +34,6 @@ run-flask-gateway-container:
 
 create-eks-cluster:
 	eksctl create cluster -f kube-config/eks-cluster-config.yml
+
+delete-eks-cluster:
+	eksctl delete cluster --name <cluster_name>
